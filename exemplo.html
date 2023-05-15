@@ -1,29 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="script.js">
-        
-    </script>
-    <style>
-        #resultado{
-            width: 200px;
-            height: 50px;
-            border: dashed black 2px;
-        }
-    </style>
-</head>
-<body>
-    INSIRA O VALOR DE a:
-    <input type="text" id="a" value="3"><!--"" é vazio -->
-    INSIRA O VALOR DE b:
-    <input type="text" id="b" value="5">
-    <button name="botao" id="botao" onclick="chama();"><!--botão e direcionamento do botao "onclick"-->
-        CHAMA QUE VEM
-    </button>
-    <div id="resultado">CHAMA QUE VEM</div>
-</body>
-</html>
+
+function chama(){
+    //document.body.style.backgroundColor = "red";
+    let a = parseInt(document.getElementById("a").value);
+    let b = parseInt(document.getElementById("b").value);
+    let soma = a + b;
+    //alert("SOMA IGUAL A " + soma);
+    console.log("SOMA IGUAL A " + soma)
+    //DESVOLVER O RESULTADO PARA A TELA
+    document.getElementById("resultado").innerHTML = "SOMA IGUAL A " + soma
+}
+function exercicio1(){
+    let a = parseInt(document.getElementById("a").value);
+    let b = parseInt(document.getElementById("b").value);
+    let c = parseInt(document.getElementById("c").value);
+    let xv = -b/(2*a);
+    let delta = b*b - 4*a*c;
+    let yv = -delta/(4*a);
+    //devolver o resultado a tela
+    document.getElementById("resultado").innerHTML = "O PONTO É (" + xv.toFixed(2) + "," + yv.toFixed(2) + ")";
+}
+
+//conversão de temperatura
+function exercicio2(){
+    //alert("teste");
+    let resultado;
+    let t = document.getElementById('temp').value;
+    console.log("TEMP=" + t);
+    let escala = document.getElementById("converter").value
+    console.log("PARA=" + escala)
+    if(escala == "c") {
+        //CC = (F-32) * 5 /9
+        resultado = (temp-32)*5/9
+    }
+}
